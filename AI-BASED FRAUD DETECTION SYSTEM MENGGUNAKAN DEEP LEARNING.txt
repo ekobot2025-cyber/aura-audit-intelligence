@@ -1,0 +1,1847 @@
+AI-BASED FRAUD DETECTION SYSTEM MENGGUNAKAN DEEP LEARNING
+
+## 1. PROJECT OVERVIEW
+
+Build a modern, secure, responsive web application called:
+
+# DETEKSI FRAUD
+
+### AI-Based Document Forensics & Financial Anomaly Detection System
+
+The application is designed to assist auditors, financial officers, organizations, universities, government institutions, and internal control units in identifying **indications of fraud, document manipulation, abnormal pricing, potential mark-up, duplicate transactions, inconsistencies between financial documents, and suspicious transaction patterns**.
+
+IMPORTANT:
+
+The application must NEVER automatically accuse a person, vendor, or organization of committing fraud.
+
+All AI results must be presented as:
+
+* Indication
+* Anomaly
+* Suspicious pattern
+* Risk
+* Requires verification
+* Recommended for auditor review
+
+Use terminology such as:
+
+> "Indikasi Potensi Fraud"
+
+and NOT:
+
+> "Fraud Terbukti"
+
+The final determination remains the responsibility of authorized auditors/investigators.
+
+---
+
+# 2. PRIMARY OBJECTIVE
+
+Develop an AI-assisted fraud detection platform combining:
+
+1. Document Forensics
+2. OCR & Document Intelligence
+3. Financial Anomaly Detection
+4. Price Intelligence
+5. Cross-Document Verification
+6. Duplicate Document Detection
+7. Transaction Pattern Analysis
+8. Vendor Risk Analysis
+9. Explainable AI
+10. Fraud Risk Scoring
+11. AI Auditor
+12. Audit Trail & Reporting
+
+The system must be modular so new AI models and fraud detection methods can be added later.
+
+---
+
+# 3. USER ROLES
+
+Create Role-Based Access Control (RBAC).
+
+## Super Admin
+
+Can:
+
+* Manage organizations
+* Manage users
+* Configure system
+* Manage AI models
+* Configure risk parameters
+* Manage reference price sources
+* View system logs
+* Manage integrations
+* Access global analytics
+
+## Administrator
+
+Can:
+
+* Manage organization users
+* Upload documents
+* Manage document categories
+* Manage reference prices
+* View analyses
+* Generate reports
+
+## Auditor
+
+Primary system user.
+
+Can:
+
+* Upload financial documents
+* Run fraud analysis
+* Review AI findings
+* Compare documents
+* investigate transactions
+* Review vendor risk
+* Add auditor notes
+* Change investigation status
+* Generate audit reports
+
+## Reviewer / Supervisor
+
+Can:
+
+* Review auditor findings
+* Approve/reject findings
+* Add comments
+* View risk dashboard
+* Generate reports
+
+## Read Only / Management
+
+Can:
+
+* View dashboards
+* View approved findings
+* View reports
+* View fraud risk statistics
+
+---
+
+# 4. MAIN DASHBOARD
+
+Create a professional executive fraud monitoring dashboard.
+
+Display KPI cards:
+
+### Total Documents Analyzed
+
+Example:
+1,284
+
+### Total Transaction Value
+
+Rp12.8 Miliar
+
+### Low Risk
+
+1,042
+
+### Medium Risk
+
+184
+
+### High Risk
+
+58
+
+### Suspicious Documents
+
+32
+
+### Price Anomalies
+
+47
+
+### Potential Financial Exposure
+
+Rp487.500.000
+
+### Vendors Under Review
+
+12
+
+Create charts:
+
+Fraud Risk Trend
+
+Risk Distribution
+
+Document Analysis Status
+
+Financial Anomaly Trend
+
+Top Suspicious Vendors
+
+Top Fraud Indicators
+
+Transaction Value by Risk Level
+
+Monthly Risk Detection
+
+Use:
+
+Green = Low Risk
+
+Yellow/Orange = Medium Risk
+
+Red = High Risk
+
+The interface should be clean and professional, NOT sensational.
+
+---
+
+# 5. DOCUMENT UPLOAD CENTER
+
+Create drag-and-drop upload.
+
+Supported files:
+
+PDF
+JPG
+JPEG
+PNG
+XLSX
+CSV
+
+Allow:
+
+Single upload
+
+Multiple upload
+
+Batch analysis
+
+Document categories:
+
+RAB
+Invoice
+Kwitansi
+Nota
+Kontrak
+Purchase Order
+SPJ
+BAST
+Surat Pesanan
+Dokumen Pengadaan
+Laporan Keuangan
+Other
+
+Store:
+
+Document ID
+
+File name
+
+Document type
+
+Upload date
+
+Uploader
+
+File hash
+
+Analysis status
+
+Risk score
+
+Investigation status
+
+---
+
+# 6. DOCUMENT FORENSICS ENGINE
+
+Create a Document Forensic module.
+
+Analyze potential manipulation such as:
+
+Text replacement
+
+Text overlay
+
+Copy-move manipulation
+
+Image insertion
+
+Different fonts
+
+Different font sizes
+
+Unusual spacing
+
+Alignment anomalies
+
+Compression anomalies
+
+Pixel inconsistencies
+
+Noise inconsistencies
+
+Image resampling
+
+Suspicious editing areas
+
+Metadata anomalies
+
+PDF object anomalies
+
+Modification timestamps
+
+Software used to create PDF
+
+Software used to modify PDF
+
+For image-based documents, design architecture so deep learning models can later perform:
+
+Image tampering detection
+
+Copy-move detection
+
+Splicing detection
+
+Text replacement detection
+
+Image manipulation localization
+
+Display suspected manipulated areas using bounding boxes or heatmaps.
+
+Example:
+
+DOCUMENT INTEGRITY
+
+Integrity Score: 61/100
+
+Risk: HIGH
+
+Detected:
+
+⚠ Suspicious text region
+
+Page: 2
+
+Area:
+"Harga Satuan"
+
+Confidence:
+87%
+
+Display:
+
+Original document preview
+
+*
+
+AI forensic heatmap
+
+side by side.
+
+---
+
+# 7. OCR & DOCUMENT INTELLIGENCE
+
+Implement OCR/document extraction architecture.
+
+Extract:
+
+Vendor
+
+Invoice number
+
+Invoice date
+
+Item description
+
+Quantity
+
+Unit
+
+Unit price
+
+Total price
+
+Tax
+
+Grand total
+
+Contract number
+
+Payment information
+
+Other important fields
+
+Store extracted information as structured database records.
+
+Example:
+
+Item:
+Laptop ASUS Vivobook
+
+Quantity:
+10
+
+Unit Price:
+Rp18.500.000
+
+Total:
+Rp185.000.000
+
+Confidence:
+96%
+
+Users must be able to manually correct OCR results.
+
+Maintain history of corrections.
+
+---
+
+# 8. PRICE INTELLIGENCE ENGINE
+
+Create a module:
+
+# PRICE INTELLIGENCE
+
+The purpose is to identify unusual prices and potential mark-up indicators.
+
+Compare transaction prices against:
+
+Internal historical prices
+
+Previous procurement prices
+
+Reference price database
+
+Uploaded price lists
+
+Approved standard prices
+
+Market benchmark data
+
+External price sources if API integration becomes available
+
+Calculate:
+
+Reference Price
+
+Transaction Price
+
+Difference
+
+Percentage Deviation
+
+Statistical deviation
+
+Risk Level
+
+Example:
+
+Product:
+
+Laptop ASUS Vivobook
+
+Reference Price:
+Rp13.200.000
+
+Transaction Price:
+Rp18.500.000
+
+Difference:
+Rp5.300.000
+
+Deviation:
++40.15%
+
+Risk:
+
+HIGH RISK
+
+Display warning:
+
+"Harga transaksi berada 40,15% di atas harga referensi. Kondisi ini merupakan indikator anomali harga dan memerlukan verifikasi auditor."
+
+DO NOT automatically call it corruption or proven mark-up.
+
+---
+
+# 9. PRICE REFERENCE DATABASE
+
+Create:
+
+Master Data → Reference Prices
+
+Fields:
+
+Product Code
+
+Product Name
+
+Category
+
+Brand
+
+Specification
+
+Unit
+
+Reference Price
+
+Source
+
+Region
+
+Effective Date
+
+Expiration Date
+
+Notes
+
+Allow import from:
+
+Excel
+
+CSV
+
+Manual input
+
+API-ready architecture.
+
+IMPORTANT:
+
+Support regional price differences.
+
+Example:
+
+Papua
+Papua Pegunungan
+Papua Tengah
+Papua Selatan
+National
+
+This is important because logistics costs may cause legitimate regional price differences.
+
+---
+
+# 10. CROSS-DOCUMENT VERIFICATION
+
+This is one of the most important features.
+
+Allow users to upload related documents.
+
+Example:
+
+RAB
+
+Contract
+
+Purchase Order
+
+Invoice
+
+BAST
+
+Payment document
+
+The AI must compare information across documents.
+
+Compare:
+
+Product
+
+Quantity
+
+Unit price
+
+Total
+
+Vendor
+
+Dates
+
+Contract numbers
+
+Invoice numbers
+
+Payment values
+
+Example:
+
+RAB:
+
+20 laptops
+Rp13.000.000
+
+CONTRACT:
+
+20 laptops
+Rp14.000.000
+
+INVOICE:
+
+20 laptops
+Rp14.000.000
+
+BAST:
+
+18 laptops
+
+Generate:
+
+CROSS DOCUMENT ALERT
+
+Quantity mismatch detected.
+
+Contract:
+20 units
+
+Invoice:
+20 units
+
+BAST:
+18 units
+
+Difference:
+2 units
+
+Potential financial exposure:
+
+2 × Rp14.000.000
+
+= Rp28.000.000
+
+Risk:
+HIGH
+
+---
+
+# 11. DUPLICATE INVOICE DETECTION
+
+Detect potential duplicate invoices.
+
+Compare:
+
+Invoice number
+
+Vendor
+
+Transaction value
+
+Transaction date
+
+Bank account
+
+Document hash
+
+OCR text similarity
+
+Visual similarity
+
+Example:
+
+Possible Duplicate Invoice
+
+Similarity:
+96%
+
+Invoice A:
+INV-00291
+
+Invoice B:
+INV-00291
+
+Vendor:
+PT ABC
+
+Amount:
+Rp75.000.000
+
+Flag:
+
+HIGH RISK
+
+---
+
+# 12. TRANSACTION ANOMALY DETECTION
+
+Create machine learning architecture for financial anomaly detection.
+
+Potential algorithms:
+
+Isolation Forest
+
+Local Outlier Factor
+
+One-Class SVM
+
+Autoencoder
+
+Statistical Z-Score
+
+Interquartile Range
+
+Rule-based anomaly detection
+
+The architecture must allow models to be replaced or compared later.
+
+Analyze:
+
+Unusually large transactions
+
+Repeated transactions
+
+Unusual frequency
+
+Unusual vendor concentration
+
+Price deviations
+
+Transaction splitting
+
+Round-number patterns
+
+Transactions close to policy thresholds
+
+Abnormal payment timing
+
+Duplicate transactions
+
+Unusual combinations of vendor/item/value
+
+---
+
+# 13. TRANSACTION SPLITTING DETECTION
+
+Detect possible transaction splitting.
+
+Example:
+
+Vendor:
+PT XYZ
+
+Transactions:
+
+Rp49.800.000
+
+Rp49.500.000
+
+Rp49.900.000
+
+Rp49.700.000
+
+within a short period.
+
+Generate:
+
+Possible Transaction Splitting Pattern
+
+Number of related transactions:
+4
+
+Total:
+Rp198.900.000
+
+Risk:
+HIGH
+
+IMPORTANT:
+
+Threshold values MUST NOT be hard-coded.
+
+Create:
+
+Settings → Fraud Detection Rules
+
+Administrators can configure thresholds according to applicable institutional policies/regulations.
+
+---
+
+# 14. VENDOR RISK ANALYSIS
+
+Create Vendor Risk Profile.
+
+Display:
+
+Vendor name
+
+Tax ID / identifier
+
+Total transactions
+
+Total transaction value
+
+Average transaction
+
+Number of contracts
+
+Price anomaly frequency
+
+Duplicate invoice frequency
+
+High-risk transaction count
+
+Document anomaly count
+
+Risk score
+
+Example:
+
+PT ABC
+
+Vendor Risk Score:
+
+82 / 100
+
+HIGH RISK
+
+Risk Factors:
+
+High price deviation
+
+Frequent transactions
+
+Repeated invoice patterns
+
+High vendor concentration
+
+Document inconsistencies
+
+Create vendor risk timeline.
+
+---
+
+# 15. FRAUD RISK ENGINE
+
+Create configurable risk scoring.
+
+Example:
+
+Document manipulation:
+25%
+
+Price anomaly:
+25%
+
+Transaction anomaly:
+20%
+
+Cross-document inconsistency:
+15%
+
+Duplicate invoice:
+10%
+
+Vendor risk:
+5%
+
+Final score:
+
+0–39
+LOW
+
+40–69
+MEDIUM
+
+70–100
+HIGH
+
+IMPORTANT:
+
+Weights must be configurable.
+
+Do NOT hard-code them permanently.
+
+---
+
+# 16. EXPLAINABLE AI
+
+Every AI result must explain:
+
+WHAT was detected
+
+WHY it was considered unusual
+
+WHERE it occurred
+
+HOW significant it is
+
+WHAT data was compared
+
+WHAT the confidence level is
+
+WHAT the auditor should verify
+
+Example:
+
+Risk Score:
+84/100
+
+HIGH RISK
+
+Reason:
+
+1. Unit price is 34.7% above reference benchmark.
+
+2. Invoice price region contains visual inconsistencies.
+
+3. PDF metadata indicates modification after document date.
+
+4. Similar invoice detected in previous transaction.
+
+5. Vendor has unusually high transaction frequency.
+
+Recommendation:
+
+"Direkomendasikan untuk dilakukan pemeriksaan lebih lanjut oleh auditor."
+
+---
+
+# 17. AI AUDITOR
+
+Create conversational AI assistant:
+
+# AI AUDITOR
+
+The AI Auditor must use analyzed system data, not invent facts.
+
+Users can ask:
+
+"Analisis dokumen ini."
+
+"Kenapa transaksi ini high risk?"
+
+"Apakah terdapat indikasi mark-up?"
+
+"Bandingkan invoice dengan RAB."
+
+"Transaksi vendor mana yang paling mencurigakan?"
+
+"Tampilkan transaksi dengan deviasi harga di atas 30%."
+
+"Apakah invoice ini pernah digunakan sebelumnya?"
+
+"Jelaskan alasan Fraud Risk Score 82."
+
+AI responses must provide evidence.
+
+Example:
+
+AI AUDITOR
+
+Risk:
+HIGH
+
+I found four indicators requiring review:
+
+1. Price anomaly
+2. Metadata anomaly
+3. Cross-document inconsistency
+4. Duplicate invoice similarity
+
+Then provide detailed evidence.
+
+Never allow AI Auditor to invent transaction information.
+
+If evidence is insufficient, say:
+
+"Data yang tersedia belum cukup untuk memberikan kesimpulan."
+
+---
+
+# 18. INVESTIGATION CASE MANAGEMENT
+
+Allow suspicious transactions to become:
+
+INVESTIGATION CASE
+
+Status:
+
+New
+
+Under Review
+
+Need Evidence
+
+Confirmed Anomaly
+
+False Positive
+
+Escalated
+
+Closed
+
+Each case includes:
+
+Case ID
+
+Transaction
+
+Documents
+
+Risk score
+
+Indicators
+
+Assigned auditor
+
+Auditor notes
+
+Evidence
+
+Timeline
+
+Reviewer comments
+
+Final conclusion
+
+---
+
+# 19. AUDIT TRAIL
+
+Every important activity must be recorded.
+
+Store:
+
+User
+
+Action
+
+Date/time
+
+IP if available
+
+Document
+
+Previous value
+
+New value
+
+Analysis result
+
+Manual correction
+
+Reviewer decision
+
+Do not allow ordinary users to modify audit logs.
+
+---
+
+# 20. REPORTING
+
+Generate:
+
+Fraud Detection Report
+
+Document Forensic Report
+
+Price Anomaly Report
+
+Vendor Risk Report
+
+Investigation Report
+
+Executive Summary
+
+Reports should include:
+
+Organization
+
+Analysis date
+
+Document
+
+Transaction
+
+Risk score
+
+Detected indicators
+
+Evidence
+
+AI explanation
+
+Auditor notes
+
+Recommendations
+
+Disclaimer
+
+Support export:
+
+PDF
+
+Excel
+
+CSV
+
+---
+
+# 21. REQUIRED DISCLAIMER
+
+Display in relevant pages and reports:
+
+"Deteksi dan skor risiko yang dihasilkan oleh sistem merupakan alat bantu analisis dan bukan bukti final terjadinya fraud, korupsi, atau pelanggaran hukum. Hasil analisis harus diverifikasi lebih lanjut oleh auditor atau pihak yang berwenang."
+
+---
+
+# 22. DATABASE ARCHITECTURE
+
+Design relational database tables for:
+
+users
+
+roles
+
+organizations
+
+documents
+
+document_versions
+
+document_metadata
+
+ocr_results
+
+transactions
+
+transaction_items
+
+vendors
+
+reference_prices
+
+fraud_rules
+
+analysis_results
+
+document_anomalies
+
+price_anomalies
+
+transaction_anomalies
+
+duplicate_matches
+
+cross_document_results
+
+risk_scores
+
+investigation_cases
+
+case_evidence
+
+auditor_notes
+
+audit_logs
+
+ai_analysis
+
+reports
+
+system_settings
+
+Use UUID where appropriate.
+
+Create proper relationships and indexes.
+
+---
+
+# 23. SECURITY
+
+Implement:
+
+Secure authentication
+
+Role-Based Access Control
+
+Password hashing
+
+File validation
+
+MIME validation
+
+Upload size restrictions
+
+Rate limiting
+
+Session management
+
+CSRF protection where relevant
+
+SQL injection protection
+
+XSS protection
+
+Secure API architecture
+
+Audit logging
+
+Sensitive file access control
+
+Do not expose uploaded financial documents publicly.
+
+Documents must only be accessible by authorized users.
+
+---
+
+# 24. PRIVACY
+
+Financial documents may contain sensitive information.
+
+Implement:
+
+Organization-level data isolation
+
+Secure file storage
+
+Access logging
+
+Document deletion policy
+
+Data retention configuration
+
+Optional anonymization
+
+Never use uploaded customer documents as training data without explicit permission.
+
+---
+
+# 25. RECOMMENDED ARCHITECTURE
+
+Use a modular architecture.
+
+Suggested stack:
+
+Frontend:
+
+React / Next.js
+
+TypeScript
+
+Tailwind CSS
+
+Backend:
+
+FastAPI or suitable modern backend framework
+
+Database:
+
+PostgreSQL
+
+AI Service:
+
+Python
+
+Machine Learning:
+
+Scikit-learn
+
+PyTorch / TensorFlow where deep learning is required
+
+OCR:
+
+Design abstraction layer supporting:
+
+Tesseract
+
+PaddleOCR
+
+or external OCR API
+
+PDF Processing:
+
+PyMuPDF
+
+pdfplumber
+
+Document/image processing:
+
+OpenCV
+
+Pillow
+
+Storage:
+
+Secure local/S3-compatible storage
+
+Architecture:
+
+Frontend
+
+↓
+
+Backend API
+
+↓
+
+Fraud Detection Service
+
+↓
+
+Document Forensics Engine
+
+OCR Engine
+
+Price Intelligence Engine
+
+Anomaly Detection Engine
+
+Cross-Document Engine
+
+Risk Scoring Engine
+
+AI Auditor
+
+↓
+
+PostgreSQL
+
+↓
+
+Secure Document Storage
+
+---
+
+# 26. AI MODEL ABSTRACTION
+
+DO NOT tightly couple the application to a single AI provider.
+
+Create an AI Provider abstraction.
+
+Future providers may include:
+
+OpenAI
+
+Gemini
+
+Claude
+
+Local LLM
+
+Other providers
+
+Configure via environment variables.
+
+Never expose API keys in frontend code.
+
+---
+
+# 27. DEMO DATA
+
+Generate realistic but completely fictional demo data.
+
+Create:
+
+50 transactions
+
+10 vendors
+
+100 financial documents
+
+reference price database
+
+several deliberately anomalous transactions
+
+Examples:
+
+Normal transaction
+
+Price anomaly
+
+Duplicate invoice
+
+Quantity mismatch
+
+Suspicious document metadata
+
+Transaction splitting
+
+Vendor concentration
+
+Clearly label demo data as:
+
+"DATA SIMULASI"
+
+Never present generated demo cases as real fraud cases.
+
+---
+
+# 28. USER INTERFACE
+
+Design should communicate:
+
+Trust
+
+Professionalism
+
+Auditability
+
+Financial intelligence
+
+AI technology
+
+Avoid futuristic cyberpunk designs.
+
+Use modern enterprise dashboard style.
+
+Suggested palette:
+
+Dark Navy / Charcoal
+
+White
+
+Neutral Gray
+
+Blue accent
+
+Green = Low Risk
+
+Amber = Medium Risk
+
+Red = High Risk
+
+Use professional typography.
+
+Dashboard must be:
+
+Responsive
+
+Desktop optimized
+
+Tablet compatible
+
+Mobile readable
+
+---
+
+# 29. MAIN NAVIGATION
+
+Create sidebar:
+
+Dashboard
+
+ANALYSIS
+
+* New Analysis
+* Documents
+* Document Forensics
+* Cross Document Analysis
+
+FINANCIAL INTELLIGENCE
+
+* Transactions
+* Price Intelligence
+* Price Anomalies
+* Duplicate Detection
+
+FRAUD ANALYTICS
+
+* Risk Analysis
+* Vendor Risk
+* Fraud Patterns
+* AI Auditor
+
+INVESTIGATION
+
+* Cases
+* Evidence
+* Review
+
+REPORTS
+
+* Analysis Reports
+* Executive Reports
+
+MASTER DATA
+
+* Vendors
+* Reference Prices
+* Document Types
+
+ADMINISTRATION
+
+* Users
+* Roles
+* Organizations
+* Fraud Rules
+* AI Configuration
+* Audit Logs
+* Settings
+
+---
+
+# 30. DOCUMENT ANALYSIS WORKFLOW
+
+Implement workflow:
+
+UPLOAD DOCUMENT
+
+↓
+
+FILE VALIDATION
+
+↓
+
+DOCUMENT HASHING
+
+↓
+
+DOCUMENT CLASSIFICATION
+
+↓
+
+OCR / TEXT EXTRACTION
+
+↓
+
+METADATA EXTRACTION
+
+↓
+
+DOCUMENT FORENSICS
+
+↓
+
+STRUCTURED DATA EXTRACTION
+
+↓
+
+REFERENCE PRICE MATCHING
+
+↓
+
+CROSS-DOCUMENT ANALYSIS
+
+↓
+
+TRANSACTION ANOMALY ANALYSIS
+
+↓
+
+VENDOR ANALYSIS
+
+↓
+
+RISK SCORING
+
+↓
+
+EXPLAINABLE AI
+
+↓
+
+AUDITOR REVIEW
+
+↓
+
+INVESTIGATION / REPORT
+
+---
+
+# 31. ANALYSIS RESULT PAGE
+
+Design an excellent investigation workspace.
+
+Header:
+
+Transaction ID
+
+Vendor
+
+Document
+
+Amount
+
+Risk Score
+
+Status
+
+Tabs:
+
+Overview
+
+Document
+
+OCR
+
+Forensics
+
+Price Analysis
+
+Cross Document
+
+Anomalies
+
+Vendor
+
+AI Analysis
+
+Evidence
+
+Audit Trail
+
+Example:
+
+FRAUD RISK SCORE
+
+84 / 100
+
+HIGH RISK
+
+Potential Financial Exposure
+
+Rp53.000.000
+
+Indicators:
+
+🔴 Price anomaly
+
+🔴 Document manipulation indicator
+
+🟠 Metadata anomaly
+
+🔴 Duplicate document
+
+🟠 Vendor anomaly
+
+Allow auditor to:
+
+Accept finding
+
+Reject finding
+
+Mark false positive
+
+Add evidence
+
+Add note
+
+Escalate case
+
+Generate report
+
+---
+
+# 32. DEVELOPMENT APPROACH
+
+Build the application incrementally.
+
+PHASE 1 — FOUNDATION
+
+Authentication
+
+RBAC
+
+Organization
+
+Database
+
+Dashboard
+
+Document upload
+
+Transactions
+
+Vendor management
+
+Reference prices
+
+PHASE 2 — DOCUMENT INTELLIGENCE
+
+OCR
+
+Metadata extraction
+
+Document preview
+
+Structured extraction
+
+PHASE 3 — FINANCIAL ANALYTICS
+
+Price comparison
+
+Price anomaly
+
+Transaction anomaly
+
+Risk scoring
+
+PHASE 4 — DOCUMENT FORENSICS
+
+Image forensic pipeline
+
+PDF forensic analysis
+
+Manipulation visualization
+
+PHASE 5 — ADVANCED FRAUD ANALYTICS
+
+Cross-document verification
+
+Duplicate detection
+
+Vendor risk
+
+Transaction pattern detection
+
+PHASE 6 — AI
+
+Explainable AI
+
+AI Auditor
+
+AI-generated analysis summary
+
+PHASE 7 — INVESTIGATION
+
+Case management
+
+Evidence
+
+Review workflow
+
+Audit trail
+
+Reports
+
+---
+
+# 33. MVP PRIORITY
+
+Do NOT attempt to implement every advanced AI model immediately.
+
+The first usable MVP MUST focus on:
+
+1. Secure document upload
+2. OCR / document extraction
+3. Metadata analysis
+4. Reference price database
+5. Price anomaly detection
+6. Cross-document comparison
+7. Fraud Risk Score
+8. Explainable findings
+9. Auditor review
+10. Dashboard
+11. Reports
+
+Advanced deep-learning document manipulation detection should use a modular placeholder/service architecture until a validated model and dataset are available.
+
+DO NOT fake deep-learning detection.
+
+If a trained model is unavailable, clearly show:
+
+"Advanced Forensic Model Not Configured"
+
+rather than generating fabricated confidence scores.
+
+---
+
+# 34. RESEARCH READINESS
+
+Design the system so that it can later support academic research.
+
+Store:
+
+Model name
+
+Model version
+
+Detection method
+
+Input
+
+Output
+
+Confidence
+
+Ground truth
+
+Auditor validation
+
+False positive
+
+False negative
+
+Processing time
+
+This will allow future evaluation using:
+
+Accuracy
+
+Precision
+
+Recall
+
+F1-score
+
+Confusion Matrix
+
+ROC-AUC
+
+MAE/MAPE for price anomaly models where applicable
+
+Store experiment results separately from production findings.
+
+---
+
+# 35. CRITICAL DEVELOPMENT RULES
+
+Do not fabricate AI results.
+
+Do not create fake forensic confidence scores.
+
+Do not label anomalies as proven corruption.
+
+Do not expose sensitive financial documents.
+
+Do not hard-code fraud rules.
+
+Do not hard-code reference prices.
+
+Do not hard-code AI provider.
+
+Do not place API keys in frontend.
+
+Do not use mock data after production data is available.
+
+Keep AI findings explainable.
+
+Keep human auditor in the decision loop.
+
+Every risk score must have traceable contributing factors.
+
+Every detected anomaly must point to supporting evidence.
+
+All important actions must create an audit log.
+
+---
+
+# 36. FINAL PRODUCT VISION
+
+The final application should behave like an:
+
+AI-ASSISTED FRAUD INVESTIGATION WORKSPACE
+
+rather than a simple fraud classifier.
+
+The system should answer four questions:
+
+1. WHAT is suspicious?
+2. WHY is it suspicious?
+3. WHERE is the supporting evidence?
+4. WHAT should the auditor verify next?
+
+The application should combine:
+
+Document Forensics
++
+Financial Analytics
++
+Machine Learning
++
+Explainable AI
++
+Human Auditor Review
+
+to help organizations identify financial anomalies earlier while maintaining responsible, evidence-based decision making.
