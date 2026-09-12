@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import PolygonBackground from './PolygonBackground';
 import OrbitGlobe from './OrbitGlobe';
 import { 
-  ShieldCheck, ArrowRight, Lock, KeyRound, Sparkles, TrendingUp, 
+  ShieldCheck, ArrowRight, Lock, Sparkles, TrendingUp, 
   FileSpreadsheet, Smartphone, Award, Bot, Database, Eye, CheckCircle2, 
-  Layers, ChevronRight, Activity, Terminal, ExternalLink, UserCheck, AlertCircle,
+  Layers, ChevronRight, Activity, UserCheck, AlertCircle,
   Split, Calendar, Building2, ShieldAlert, AlertTriangle, BarChart3, ScanText, 
-  Type, Stamp, CopyCheck, Flame, AlertOctagon, Cpu, FileSignature, ArrowUpRight, CheckCheck,
+  Type, Flame, FileSignature, CheckCheck,
   FileText, Fingerprint
 } from 'lucide-react';
 

@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { 
-  ShieldAlert, CheckCircle2, AlertTriangle, XCircle, 
-  Upload, Search, FileText, Smartphone, Database, 
-  History, BarChart2, Plus, Sparkles, RefreshCw, 
-  Building2, CreditCard, Clock, UserX, AlertOctagon,
-  ArrowRight, ShieldCheck, Layers, FileSpreadsheet
+  CheckCircle2, AlertTriangle, XCircle, 
+  Upload, Search, Smartphone, Database, 
+  BarChart2, Plus, Sparkles, RefreshCw, 
+  UserX, AlertOctagon
 } from 'lucide-react';
 
 const API = `${process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001'}/api`;
@@ -17,7 +16,6 @@ export default function ReceiptInspectorView() {
   const [selectedSample, setSelectedSample] = useState(null);
   const [verifying, setVerifying] = useState(false);
   const [result, setResult] = useState(null);
-  const [error, setError] = useState('');
   
   // Flagged accounts state
   const [flaggedAccounts, setFlaggedAccounts] = useState([]);
@@ -65,7 +63,6 @@ export default function ReceiptInspectorView() {
   const handleVerifySample = async (sample) => {
     setSelectedSample(sample);
     setVerifying(true);
-    setError('');
     setResult(null);
     setUploadedFileName('');
 
@@ -77,7 +74,7 @@ export default function ReceiptInspectorView() {
       });
       setResult(res.data);
     } catch (err) {
-      setError(err.response?.data?.detail || 'Gagal memverifikasi sampel struk.');
+      alert(err.response?.data?.detail || 'Gagal memverifikasi sampel struk.');
     } finally {
       setVerifying(false);
     }
@@ -89,7 +86,6 @@ export default function ReceiptInspectorView() {
 
     setUploadedFileName(file.name);
     setVerifying(true);
-    setError('');
     setResult(null);
 
     const formData = new FormData();
@@ -102,7 +98,7 @@ export default function ReceiptInspectorView() {
       });
       setResult(res.data);
     } catch (err) {
-      setError(err.response?.data?.detail || 'Gagal memindai gambar struk. Pastikan berkas berformat JPG/PNG.');
+      alert(err.response?.data?.detail || 'Gagal memindai gambar struk. Pastikan berkas berformat JPG/PNG.');
     } finally {
       setVerifying(false);
       if (fileInputRef.current) fileInputRef.current.value = '';

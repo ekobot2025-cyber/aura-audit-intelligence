@@ -25,7 +25,7 @@ import ReceiptInspectorView from './components/ReceiptInspectorView';
 import EnterpriseForensicsView from './components/EnterpriseForensicsView';
 import SettingsView from './components/SettingsView';
 import LandingPage from './components/LandingPage';
-import { LogOut, Home } from 'lucide-react';
+import { LogOut } from 'lucide-react';
 
 
 const API = `${process.env.REACT_APP_BACKEND_URL || 'http://localhost:8000'}/api`;

@@ -3,8 +3,8 @@ import axios from 'axios';
 import { 
   UploadCloud, FileUp, Search, RefreshCw, Eye, AlertTriangle, 
   CheckCircle, Shield, FileText, Building, Calendar, DollarSign, 
-  ExternalLink, Copy, Check, Download, AlertCircle, Info, X,
-  UserCheck, Printer, Layout, Columns, CheckCircle2, ShieldCheck, Sparkles
+  Copy, Check, Download, AlertCircle, Info, X,
+  UserCheck, Printer, Columns, ShieldCheck
 } from 'lucide-react';
 
 const API = `${process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001'}/api`;

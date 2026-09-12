@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { 
-  Award, ShieldAlert, CheckCircle2, AlertTriangle, FileSignature, 
-  Search, ExternalLink, Cpu, Eye, Image as ImageIcon, QrCode, 
-  Sparkles, RefreshCw, FileCheck2, Stamp, KeyRound, Building2,
-  Lock, ArrowRight, Download, Users, Fingerprint, Database,
-  BarChart2, Plane, Receipt, DollarSign, Network, Scale,
-  AlertOctagon, Check, ArrowUpRight, ShieldCheck, ChevronRight
+  ShieldAlert, CheckCircle2, AlertTriangle, FileSignature, 
+  Cpu, Eye, Image as ImageIcon, 
+  Sparkles, RefreshCw, 
+  Lock, Download, Fingerprint, Database,
+  BarChart2, Plane, Receipt, DollarSign, Network, 
+  AlertOctagon
 } from 'lucide-react';
 
 const API = `${process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001'}/api`;
@@ -35,7 +35,6 @@ export default function EnterpriseForensicsView({ currentUser = { role: 'Auditor
   // ── Vision Lab State ──
   const [visionAnalyzing, setVisionAnalyzing] = useState(false);
   const [visionResult, setVisionResult] = useState(null);
-  const [visionFile, setVisionFile] = useState(null);
   const fileInputRef = useRef(null);
 
   // ── National Registry State ──
@@ -118,7 +117,6 @@ export default function EnterpriseForensicsView({ currentUser = { role: 'Auditor
     const file = e.target.files?.[0];
     if (!file) return;
 
-    setVisionFile(URL.createObjectURL(file));
     setVisionAnalyzing(true);
     setVisionResult(null);
 

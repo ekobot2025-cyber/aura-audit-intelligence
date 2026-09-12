@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { 
   BarChart3, Calculator, Plus, RefreshCw, ShieldCheck, 
-  Search, ExternalLink, Globe, CheckCircle2, Zap, ArrowRight, X, Cpu, Check
+  Search, ExternalLink, Globe, CheckCircle2, Zap, X, Check
 } from 'lucide-react';
 
 const API = `${process.env.REACT_APP_BACKEND_URL || 'http://localhost:8000'}/api`;
@@ -56,6 +56,7 @@ export default function PriceIntelligenceView() {
   // Initial calculation on load
   useEffect(() => {
     handleCalculate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleCalculate = async (e) => {

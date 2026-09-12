@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { 
   ShieldCheck, ChevronRight, Sparkles, 
-  GitCompare, ClipboardCheck, Bot, 
+  GitCompare, ClipboardCheck, 
   ArrowUpRight, BarChart3, AlertTriangle, CheckCircle2,
   Cpu, Layers, Smartphone, Award
 } from 'lucide-react';

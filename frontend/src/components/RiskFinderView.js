@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import { 
-  FileSpreadsheet, Upload, Download, AlertTriangle, ShieldCheck, 
-  ArrowRight, CheckCircle2, RefreshCw, FileText, Search, Filter, 
-  ChevronDown, ChevronUp, Layers, HelpCircle, Sparkles, ExternalLink
+  FileSpreadsheet, Upload, Download, AlertTriangle, 
+  RefreshCw, FileText, Search, 
+  ChevronDown, ChevronUp, HelpCircle, Sparkles
 } from 'lucide-react';
 
 const API = `${process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001'}/api`;
@@ -50,7 +50,7 @@ export default function RiskFinderView() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState('');
   const [filterType, setFilterType] = useState('all');
-  const [filterSeverity, setFilterSeverity] = useState('all');
+  const [filterSeverity] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedFinding, setExpandedFinding] = useState(null);
   const [downloadingReport, setDownloadingReport] = useState(false);
